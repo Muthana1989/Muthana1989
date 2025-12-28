@@ -2,99 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BiU | IT & Communication Specialists</title>
+
+  <!-- Page title | Sayfa başlığı -->
+  <title>BiU | IT & Automation</title>
+
+  <!-- Responsive settings | Mobil uyumluluk -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    /* ===============================
+       GLOBAL BODY STYLE
+       Genel sayfa ayarları
+    =============================== */
     body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #e5e7eb;
-  min-height: 100vh;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #e5e7eb;
+      min-height: 100vh;
 
-  /* TECH + AUTOMATION BACKGROUND */
-  background:
-    linear-gradient(
-      135deg,
-      rgba(15, 23, 42, 0.95),
-      rgba(2, 6, 23, 0.95)
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(56, 189, 248, 0.06),
-      rgba(56, 189, 248, 0.06) 1px,
-      transparent 1px,
-      transparent 14px
-    );
+      /*
+        BACKGROUND LAYERS
+        Arka plan katmanları
+      */
+      background:
+        /* Dark gradient (technology mood)
+           Koyu degrade (teknoloji havası) */
+        linear-gradient(
+          135deg,
+          #020617,
+          #0f172a,
+          #020617
+        ),
 
-  background-blend-mode: overlay;
-  background-attachment: fixed;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-    /* subtle motion lines */
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
+        /* Diagonal tech grid
+           Diyagonal teknik çizgiler */
         repeating-linear-gradient(
-          120deg,
-          rgba(255,255,255,0.03),
-          rgba(255,255,255,0.03) 1px,
+          45deg,
+          rgba(56,189,248,0.08),
+          rgba(56,189,248,0.08) 1px,
           transparent 1px,
-          transparent 80px
+          transparent 16px
         );
-      animation: moveBg 30s linear infinite;
-      pointer-events: none;
+
+      background-blend-mode: overlay;
+      background-attachment: fixed;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* Background animation
+         Arka plan hareketi */
+      animation: bgMove 18s linear infinite;
     }
 
-    @keyframes moveBg {
-      from { background-position: 0 0; }
-      to   { background-position: 1000px 0; }
+    /* Background motion animation
+       Arka plan hareket animasyonu */
+    @keyframes bgMove {
+      from {
+        background-position: 0 0, 0 0;
+      }
+      to {
+        background-position: 400px 400px, 0 0;
+      }
     }
 
+    /* ===============================
+       MAIN CONTAINER
+       Ana kutu
+    =============================== */
     .container {
-      position: relative;
       max-width: 900px;
       padding: 40px;
       text-align: center;
-      z-index: 1;
     }
 
+    /* ===============================
+       LOGO / TITLE
+       Logo / Başlık
+    =============================== */
     h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin-bottom: 10px;
       color: #38bdf8;
-      letter-spacing: 2px;
+
+      /* Glow effect
+         Parlama efekti */
+      text-shadow:
+        0 0 10px rgba(56,189,248,0.6),
+        0 0 25px rgba(56,189,248,0.4);
     }
 
     h2 {
       font-weight: normal;
-      margin-bottom: 30px;
       color: #cbd5f5;
+      margin-bottom: 30px;
     }
 
+    /* ===============================
+       DESCRIPTION
+       Açıklama metni
+    =============================== */
     p {
       font-size: 1.1rem;
       line-height: 1.8;
       margin-bottom: 40px;
     }
 
+    /* ===============================
+       SERVICE TAGS
+       Hizmet etiketleri
+    =============================== */
     .tags span {
       display: inline-block;
       margin: 6px;
       padding: 10px 18px;
-      background: rgba(30,41,59,0.8);
-      border-radius: 999px;
+      background: rgba(30,41,59,0.7);
+      border-radius: 25px;
       font-size: 0.9rem;
       backdrop-filter: blur(6px);
     }
 
+    /* ===============================
+       BUTTONS
+       Butonlar
+    =============================== */
     .buttons {
       margin-top: 40px;
     }
@@ -102,23 +134,26 @@
     .buttons a {
       display: inline-block;
       margin: 10px;
-      padding: 12px 28px;
-      border-radius: 999px;
+      padding: 14px 28px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: white;
       text-decoration: none;
-      font-size: 0.95rem;
-      color: #e5e7eb;
-      background: linear-gradient(135deg, #0ea5e9, #6366f1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .buttons a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(56,189,248,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(56,189,248,0.5);
     }
 
+    /* ===============================
+       FOOTER
+       Alt bilgi
+    =============================== */
     footer {
-      margin-top: 50px;
+      margin-top: 60px;
       font-size: 0.85rem;
       color: #94a3b8;
     }
@@ -127,17 +162,24 @@
 
 <body>
   <div class="container">
+
+    <!-- Brand name | Marka adı -->
     <h1>BiU</h1>
+
+    <!-- Subtitle | Alt başlık -->
     <h2>Information Technology & Communication Specialists</h2>
 
+    <!-- About text | Hakkında -->
     <p>
       BiU is a professional technology identity focused on
       <strong>software engineering</strong>,
-      <strong>web development</strong>,
-      and <strong>automation solutions</strong>.
+      <strong>web development</strong>, and
+      <strong>automation solutions</strong>.
+      <br>
       We design efficient, reliable, and scalable systems for modern needs.
     </p>
 
+    <!-- Services | Hizmetler -->
     <div class="tags">
       <span>Software Engineering</span>
       <span>Web Development</span>
@@ -146,14 +188,17 @@
       <span>System Optimization</span>
     </div>
 
+    <!-- Contact buttons | İletişim butonları -->
     <div class="buttons">
       <a href="https://wa.me/905392980597" target="_blank">WhatsApp</a>
       <a href="https://github.com/BiU-it" target="_blank">GitHub</a>
     </div>
 
+    <!-- Footer | Alt yazı -->
     <footer>
       © BiU Team
     </footer>
+
   </div>
 </body>
 </html>
